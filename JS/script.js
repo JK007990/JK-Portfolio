@@ -52,29 +52,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const chartBars = document.querySelectorAll(".bar");
 
-    const chartObserver = new IntersectionObserver((entries) => {
+    const chartSection = document.querySelector(
+        ".experience-chart-card"
+    );
 
-        entries.forEach(entry => {
+    if (chartSection && chartBars.length > 0) {
 
-            if (entry.isIntersecting) {
+        const chartObserver = new IntersectionObserver(
+            (entries, observer) => {
 
-                chartBars.forEach(bar => {
-                    bar.classList.add("animated");
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        chartBars.forEach(bar => {
+                            bar.classList.add("animated");
+                        });
+
+                        observer.disconnect();
+
+                    }
+
                 });
 
-                chartObserver.disconnect();
-
+            },
+            {
+                threshold: 0.3
             }
+        );
 
-        });
-
-    }, {
-        threshold: 0.3
-    });
-
-    const chartSection = document.querySelector(".experience-chart-card");
-
-    if (chartSection) {
         chartObserver.observe(chartSection);
     }
 
@@ -89,23 +95,26 @@ document.addEventListener("DOMContentLoaded", () => {
         element.classList.add("reveal");
     });
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-        entries.forEach(entry => {
+            entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                entry.target.classList.add("visible");
+                    entry.target.classList.add("visible");
 
-                observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
 
-            }
+                }
 
-        });
+            });
 
-    }, {
-        threshold: 0.15
-    });
+        },
+        {
+            threshold: 0.15
+        }
+    );
 
     revealElements.forEach(element => {
         revealObserver.observe(element);
@@ -159,9 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const hero = document.querySelector(".hero");
     const heroProfile = document.querySelector(".hero-profile");
 
-    if (hero && heroProfile && window.matchMedia("(pointer: fine)").matches) {
+    if (
+        hero &&
+        heroProfile &&
+        window.matchMedia("(pointer: fine)").matches
+    ) {
 
-        hero.addEventListener("mousemove", (event) => {
+        hero.addEventListener("mousemove", event => {
 
             const rect = hero.getBoundingClientRect();
 
@@ -180,6 +193,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
-
 
 });
