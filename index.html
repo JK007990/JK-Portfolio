@@ -1,399 +1,375 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative Portfolio of Bhone Pyae Lyan">
-    <title>Bhone Pyae Lyan | Portfolio</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>BPL | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
 
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
+    <!-- LOADER -->
     <div class="loader" id="loader">
-        <span>PORTFOLIO</span>
-        <div class="loader-line"></div>
+        <span>BPL.</span>
     </div>
 
     <!-- HERO -->
     <header class="hero" id="home">
 
         <div class="hero-top">
-            <a href="#home" class="mini-logo">
-                <span class="mini-logo-dot"></span>
-                BPL<span>.</span>
-            </a>
-
-            <div class="hero-status">
-                <span class="status-dot"></span>
-                Available for opportunities
-            </div>
+            <a href="#home" class="brand">BPL<span>.</span></a>
+            <span class="hero-top-text">PERSONAL PORTFOLIO</span>
         </div>
-
-        <div class="hero-outline outline-one"></div>
-        <div class="hero-outline outline-two"></div>
 
         <div class="hero-content">
 
-            <div class="hero-intro">
-                <span class="hero-small-text">CREATIVE / DEVELOPER / DESIGNER</span>
-            </div>
+            <p class="hero-kicker">HELLO, I'M BPL</p>
 
-            <h1 class="hero-logo">
-                port<span class="logo-f">f</span>olio<span class="logo-period">.</span>
-            </h1>
+            <h1 class="hero-logo">portfolio<span>.</span></h1>
 
             <div class="hero-caption">
-                <div class="quote-symbol">“</div>
-
-                <p>
-                    Unless you change, nothing will ever change.
-                    Embrace imperfection, choose simplicity,
-                    and discover the true essence of life.
+                <p class="hero-quote">
+                    "Creating ideas, building experiences<br>
+                    and making things happen."
                 </p>
-
-                <div class="quote-divider"></div>
-
-                <div class="quote-author">
-                    <span>Bhone Pyae Lyan</span>
-                    <small>Jin Kairo</small>
-                </div>
+                <span>WELCOME TO MY WORLD</span>
             </div>
 
             <nav class="hero-nav">
-                <a href="Pages/about.html" class="nav-link"><span class="nav-icon">01</span>About Me</a>
-                <a href="Pages/experience.html" class="nav-link"><span class="nav-icon">02</span>Experience</a>
-                <a href="Pages/achievement.html" class="nav-link"><span class="nav-icon">03</span>Achievement</a>
-                <a href="Pages/contact.html" class="nav-link"><span class="nav-icon">04</span>Contact</a>
+                <a href="Pages/about.html">About Me <span>↗</span></a>
+                <a href="Pages/experience.html">Experience <span>↗</span></a>
+                <a href="Pages/achievement.html">Achievement <span>↗</span></a>
+                <a href="Pages/contact.html">Contact <span>↗</span></a>
             </nav>
 
         </div>
 
         <div class="hero-portrait">
-            <div class="portrait-orange"></div>
             <div class="portrait-outline"></div>
-
-            <img src="image/Profile.png" alt="Bhone Pyae Lyan" class="hero-profile">
-
-            <div class="portrait-label">
-                <span>CREATIVE MIND</span>
-                <span>EST. 2022</span>
-            </div>
+            <img src="image/Profile.png" alt="BPL Profile" class="hero-profile">
+            <div class="portrait-label">CREATIVE MIND / 2026</div>
         </div>
 
-        <div class="hero-decoration">
-            <span class="deco-dot"></span>
-            <span class="deco-dot"></span>
-            <span class="deco-dot"></span>
-        </div>
-
-        <div class="hero-bottom-note">
-            <span>SCROLL TO EXPLORE</span>
-            <span class="scroll-arrow">↓</span>
+        <div class="hero-bottom">
+            <span>BASED IN MYANMAR</span>
+            <span>SCROLL TO EXPLORE ↓</span>
         </div>
 
     </header>
 
     <!-- ABOUT -->
-    <section class="about-section section" id="about">
+    <section class="section about-section" id="about">
 
-        <div class="about-sidebar">
-            <div class="sidebar-heading"><span>01 / PERSONAL</span></div>
-            <div class="sidebar-circle"></div>
+        <div class="section-side">
 
-            <button class="sidebar-item active" data-content="vision">
-                <span>01</span> Vision
-            </button>
+            <span class="section-number">01 / ABOUT</span>
 
-            <button class="sidebar-item" data-content="about-me">
-                <span>02</span> About Me
-            </button>
+            <div class="about-tabs">
 
-            <button class="sidebar-item" data-content="mission">
-                <span>03</span> Mission
-            </button>
+                <button class="about-tab active" data-tab="vision">
+                    VISION
+                </button>
 
-            <div class="sidebar-bottom">
-                PERSONAL<br>PHILOSOPHY
+                <button class="about-tab" data-tab="about-me">
+                    ABOUT ME
+                </button>
+
+                <button class="about-tab" data-tab="mission">
+                    MISSION
+                </button>
+
             </div>
+
         </div>
 
         <div class="about-content">
 
-            <div class="about-top-label">
-                <span>ABOUT / WHO I AM</span>
-                <span class="about-number">01</span>
-            </div>
-
+            <!-- VISION -->
             <div class="about-panel active" id="vision">
-                <span class="panel-label">MY VISION</span>
-                <h2>Create.<br><span>Inspire.</span><br>Evolve.</h2>
-                <p>
-                    To build meaningful experiences, inspire people
-                    through creativity and technology, and continuously
-                    grow into a better version of myself.
+
+                <p class="eyebrow">MY FUTURE DIRECTION</p>
+
+                <h2 class="section-title">
+                    MY<br>
+                    <span>VISION.</span>
+                </h2>
+
+                <p class="about-description">
+                    We can change anything. We can create anything.If you want to shape the world, start by creating yourself. Don't wait for a reason or permission to do something extraordinary. Let your actions speak. Let your results be the proof.
+                    No excuses. No giving up. No looking back. The world is our audience, and every young mind has the power to create its own world.
                 </p>
-                <a href="Pages/about.html" class="about-cta">Explore My Journey <span>↗</span></a>
+
+                <p class="about-description">
+                    Think Beyond Limits. Create Without Boundaries.
+                </p>
+
             </div>
 
+            <!-- ABOUT ME -->
             <div class="about-panel" id="about-me">
-                <span class="panel-label">A LITTLE ABOUT ME</span>
-                <h2>Ideas into<br><span>Reality.</span></h2>
-                <p>
-                    I am a creative thinker, content creator,
-                    designer and web developer who loves transforming
-                    ideas into digital experiences.
+
+                <p class="eyebrow">A LITTLE INTRODUCTION</p>
+
+                <h2 class="section-title">
+                    WHO<br>
+                    <span>AM I?</span>
+                </h2>
+
+                <p class="about-description">
+                   I am a creative thinker who believes that every idea has value and every perspective deserves attention. I don't believe in simply highlighting myself. I believe in letting my work speak for who I am.
+                   I am a Content Creator, Graphic Designer, and Web Developer, passionate about turning ideas into meaningful creations.
                 </p>
-                <a href="#experience" class="about-cta">Explore My Journey <span>↗</span></a>
+
+                <p class="about-description">
+                    MI always strive to deliver my best in everything I do. I believe that the effort I put into my work today will create the opportunities and results I deserve tomorrow.
+                    For me, creativity is not just about making things look good. It's about thinking differently, solving problems, and bringing ideas to life.
+                </p>
+
+                <a href="Pages/about.html" class="text-link">
+                    MORE ABOUT ME <span>↗</span>
+                </a>
+
             </div>
 
+            <!-- MISSION -->
             <div class="about-panel" id="mission">
-                <span class="panel-label">MY MISSION</span>
-                <h2>Learn.<br><span>Build.</span><br>Impact.</h2>
-                <p>
-                    To create, innovate and share knowledge
-                    while helping people and communities grow
-                    through digital creativity.
-                </p>
-                <a href="#contact" class="about-cta">Let's Connect <span>↗</span></a>
-            </div>
 
-            <div class="about-deco">
-                <span class="deco-star">✳</span>
-                <span class="deco-small-circle"></span>
+                <p class="eyebrow">WHAT DRIVES ME</p>
+
+                <h2 class="section-title">
+                    MY<br>
+                    <span>MISSION.</span>
+                </h2>
+
+                <p class="about-description">
+                    My mission is to prove that nothing is impossible when creativity meets determination.
+                    I believe that no obstacle is greater than the willingness to learn, adapt, and keep moving forward.
+                    I am constantly learning, improving my skills, and exploring new possibilities. What I learn today, I aim to share tomorrow.
+                    I don't just want to follow the world. I want to create something meaningful that can make a difference.
+                </p>
+
+                <p class="about-description">
+                   Keep Learning. Keep Creating. Keep Moving Forward.
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="experience-section section" id="experience">
+    <section class="section experience-section" id="experience">
 
         <div class="section-heading">
-            <div>
-                <span class="section-eyebrow">02 / MY JOURNEY</span>
-                <h2>Experience<span>.</span></h2>
-            </div>
-            <p>Different roles.<br>One creative journey.</p>
+            <span class="section-number">02 / EXPERIENCE</span>
+            <p class="eyebrow">MY JOURNEY & SKILLS</p>
+            <h2 class="section-title">WHAT I'VE <span>LEARNED.</span></h2>
         </div>
 
         <div class="experience-layout">
 
-            <!-- CHART -->
             <div class="experience-chart-card">
 
-                <div class="chart-heading">
-                    <span>SKILLS & EXPERIENCE</span>
-                    <span>2022 — 2026</span>
+                <div class="card-heading">
+                    <span>MY SKILLS</span>
+                    <span>01 — 06</span>
                 </div>
 
-                <div class="chart">
+                <div class="chart-bars">
 
-                    <div class="chart-grid">
-                        <div class="grid-line"><span>4</span></div>
-                        <div class="grid-line"><span>3</span></div>
-                        <div class="grid-line"><span>2</span></div>
-                        <div class="grid-line"><span>1</span></div>
-                        <div class="grid-line"><span>0</span></div>
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Content Creation</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:85%"></div>
+                        </div>
                     </div>
 
-                    <div class="chart-bars">
-
-                        <div class="bar-item">
-                            <div class="bar cc" data-height="100"></div>
-                            <span>CC</span>
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Graphic Design</span>
+                            <span>80%</span>
                         </div>
-
-                        <div class="bar-item">
-                            <div class="bar cw" data-height="75"></div>
-                            <span>CW</span>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:80%"></div>
                         </div>
-
-                        <div class="bar-item">
-                            <div class="bar gd" data-height="75"></div>
-                            <span>GD</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar pm" data-height="25"></div>
-                            <span>PMG</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar dev" data-height="25"></div>
-                            <span>DEV</span>
-                        </div>
-
-                        <div class="bar-item">
-                            <div class="bar teaching" data-height="50"></div>
-                            <span>TEACH</span>
-                        </div>
-
                     </div>
-                </div>
 
-                <div class="chart-footer">
-                    <span>Creative Skills</span>
-                    <span class="chart-footer-dot">●</span>
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Content Writing</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Web Development</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Leadership</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-item">
+                        <div class="chart-info">
+                            <span>Communication</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="chart-track">
+                            <div class="chart-fill" style="--level:80%"></div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- TIMELINE -->
-            <div class="experience-card">
+            <div class="experience-timeline">
 
-                <div class="experience-card-header">
-                    <span class="section-eyebrow">CAREER TIMELINE</span>
-                    <h3>Where I've<br>Been.</h3>
+                <div class="card-heading">
+                    <span>MY JOURNEY</span>
+                    <span>02 — 06</span>
                 </div>
 
-                <div class="timeline">
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2022 — 2025</span>
-                            <h4>Infinity Creation</h4>
-                            <p>Content Creator</p>
-                        </div>
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <span class="timeline-date">LEARNING</span>
+                        <h3>Discovering Creativity</h3>
+                        <p>Started exploring creative ideas and digital skills.</p>
                     </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2023 — 2024</span>
-                            <h4>The Hive</h4>
-                            <p>Content Writer</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2024 — 2026</span>
-                            <h4>Lancien Myanmar</h4>
-                            <p>Graphic Designer</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2025 — May 2026</span>
-                            <h4>Youth Talk Forum</h4>
-                            <p>Program Manager</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">WEB DEVELOPMENT</span>
-                            <h4>Readora Website</h4>
-                            <p>Web Developer</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">ORGANIZATION</span>
-                            <h4>Unlock Your Future Org</h4>
-                            <p>Web Developer & Executive Director</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2024 — 2025</span>
-                            <h4>RunFree Education</h4>
-                            <p>Content Writing Teacher</p>
-                        </div>
-                    </div>
-
                 </div>
 
-                <a href="#contact" class="experience-more">
-                    LET'S WORK TOGETHER <span>↗</span>
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <span class="timeline-date">PRACTICE</span>
+                        <h3>Building My Skills</h3>
+                        <p>Practicing content creation, design and communication.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <span class="timeline-date">GROWTH</span>
+                        <h3>Creating & Improving</h3>
+                        <p>Working on personal projects and gaining experience.</p>
+                    </div>
+                </div>
+
+                <a href="Pages/experience.html" class="text-link">
+                    VIEW EXPERIENCE <span>↗</span>
                 </a>
 
             </div>
 
         </div>
+
     </section>
 
     <!-- ACHIEVEMENT -->
-    <section class="achievement-section section" id="achievement">
+    <section class="section achievement-section" id="achievement">
 
-        <div class="achievement-heading">
-            <span class="section-eyebrow">03 / HIGHLIGHTS</span>
-            <h2>Achievement<span>.</span></h2>
+        <div class="section-heading">
+            <span class="section-number">03 / ACHIEVEMENT</span>
+            <p class="eyebrow">MILESTONES & PROGRESS</p>
+            <h2 class="section-title">SMALL STEPS.<br><span>BIG DREAMS.</span></h2>
         </div>
 
         <div class="achievement-stage">
-            <div class="achievement-bg-text">CREATIVE</div>
-            <div class="achievement-orange-block"></div>
 
-            <img src="image/Profile.png" alt="Bhone Pyae Lyan" class="achievement-profile">
+            <div class="achievement-bg-text">GROWTH</div>
 
-            <div class="achievement-side-label">
-                <span>BUILDING</span>
-                <span>THE FUTURE</span>
+            <div class="achievement-image">
+                <img src="image/Profile.png" alt="BPL">
             </div>
 
-            <div class="achievement-bottom-text">
-                <span>CREATIVITY</span>
-                <span>PASSION</span>
-                <span>GROWTH</span>
+            <div class="achievement-orange">
+                <span>ALWAYS</span>
+                <h3>LEARNING.<br>ALWAYS<br>GROWING.</h3>
+                <p>Every experience is a step forward.</p>
             </div>
+
         </div>
 
-        <div class="achievement-note">
-            <p>
-                Every experience is a step forward.
-                Every achievement is a beginning.
-            </p>
-            <span>— BPL</span>
+        <div class="achievement-footer">
+            <p>Every achievement starts with the courage to begin.</p>
+
+            <a href="Pages/achievement.html" class="text-link">
+                VIEW ACHIEVEMENTS <span>↗</span>
+            </a>
         </div>
 
     </section>
 
     <!-- CONTACT -->
-    <section class="contact-section section" id="contact">
-
-        <div class="contact-top">
-            <span class="section-eyebrow">04 / GET IN TOUCH</span>
-            <span class="contact-index">LET'S CONNECT</span>
-        </div>
+    <section class="section contact-section" id="contact">
 
         <div class="contact-main">
-            <h2>LET'S MAKE<br><span>IT HAPPEN.</span></h2>
-            <a href="mailto:your-email@example.com" class="contact-button">
-                CONTACT ME <span>↗</span>
+
+            <span class="section-number">04 / CONTACT</span>
+            <p class="eyebrow">LET'S CONNECT</p>
+
+            <h2>HAVE A<br><span>PROJECT?</span></h2>
+
+            <p class="contact-description">
+                Have an idea or want to work together?
+                Feel free to reach out. Let's create something meaningful.
+            </p>
+
+            <a href="Pages/contact.html" class="contact-button">
+                GET IN TOUCH <span>↗</span>
             </a>
+
         </div>
 
-        <div class="contact-footer">
-            <div class="contact-brand">BPL<span>.</span></div>
+        <footer class="contact-footer">
 
-            <div class="contact-links">
-                <a href="mailto:your-email@example.com">Email</a>
-                <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#home" class="footer-brand">BPL<span>.</span></a>
+
+            <div class="footer-links">
+                <a href="Pages/about.html">ABOUT</a>
+                <a href="Pages/experience.html">EXPERIENCE</a>
+                <a href="Pages/achievement.html">ACHIEVEMENT</a>
+                <a href="Pages/contact.html">CONTACT</a>
             </div>
 
-            <p>© 2026 BHONE PYAE LYAN</p>
-        </div>
+            <p>© <span id="currentYear">2026</span> BPL. ALL RIGHTS RESERVED.</p>
+
+        </footer>
 
     </section>
 
-    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
 
     <script src="JS/script.js"></script>
 
