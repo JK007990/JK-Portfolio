@@ -1,142 +1,58 @@
 
-/* =========================================
-   BPL PORTFOLIO - INTERACTIONS
-========================================= */
+/* ==========================================
+   BPL PORTFOLIO - MAIN JAVASCRIPT
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. PAGE LOADER
+    /* 1. PAGE LOADER */
 
     const loader = document.getElementById("loader");
 
-    window.addEventListener("load", () => {
+    function hideLoader() {
+        if (!loader || loader.dataset.hidden === "true") return;
+
+        loader.dataset.hidden = "true";
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+
         setTimeout(() => {
-            loader?.classList.add("hide");
+            loader.style.display = "none";
         }, 500);
-    });
-
-
-    // 2. ABOUT / VISION / MISSION SWITCH
-
-    const sidebarButtons = document.querySelectorAll(".sidebar-item");
-    const aboutPanels = document.querySelectorAll(".about-panel");
-
-    sidebarButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const targetId = button.dataset.content;
-
-            sidebarButtons.forEach(item => {
-                item.classList.remove("active");
-            });
-
-            aboutPanels.forEach(panel => {
-                panel.classList.remove("active");
-            });
-
-            button.classList.add("active");
-
-            const targetPanel = document.getElementById(targetId);
-
-            if (targetPanel) {
-                targetPanel.classList.add("active");
-            }
-
-        });
-
-    });
-
-
-    // 3. EXPERIENCE CHART ANIMATION
-
-    const chartBars = document.querySelectorAll(".bar");
-
-    const chartSection = document.querySelector(
-        ".experience-chart-card"
-    );
-
-    if (chartSection && chartBars.length > 0) {
-
-        const chartObserver = new IntersectionObserver(
-            (entries, observer) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        chartBars.forEach(bar => {
-                            bar.classList.add("animated");
-                        });
-
-                        observer.disconnect();
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.3
-            }
-        );
-
-        chartObserver.observe(chartSection);
     }
 
+    if (document.readyState === "complete") {
+        hideLoader();
+    } else {
+        window.addEventListener("load", hideLoader, { once: true });
+    }
 
-    // 4. SCROLL REVEAL
-
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .experience-chart-card, .experience-card, .achievement-heading, .achievement-stage, .achievement-note, .contact-main, .contact-footer"
-    );
-
-    revealElements.forEach(element => {
-        element.classList.add("reveal");
-    });
-
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
+    setTimeout(hideLoader, 3000);
 
 
-    // 5. BACK TO TOP BUTTON
+    /* 2. BACK TO TOP */
 
     const backToTop = document.getElementById("backToTop");
 
-    window.addEventListener("scroll", () => {
+    if (backToTop) {
 
-        if (window.scrollY > 500) {
-            backToTop?.classList.add("visible");
-        } else {
-            backToTop?.classList.remove("visible");
+        function updateBackToTop() {
+            backToTop.classList.toggle("show", window.scrollY > 400);
         }
 
-    });
+        window.addEventListener("scroll", updateBackToTop);
+        updateBackToTop();
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
 
-    // 6. SMOOTH SCROLL
+    /* 3. SMOOTH SCROLL */
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -149,49 +65,167 @@ document.addEventListener("DOMContentLoaded", () => {
             const target = document.querySelector(targetId);
 
             if (target) {
-
                 event.preventDefault();
 
                 target.scrollIntoView({
-                    behavior: "smooth"
+                    behavior: "smooth",
+                    block: "start"
                 });
-
             }
+        });
+    });
 
+
+    /* 4. VISION / ABOUT ME / MISSION TABS */
+
+    const aboutTabs = document.querySelectorAll(".about-tab");
+    const aboutPanels = document.querySelectorAll(".about-panel");
+
+    function activateAboutTab(tab) {
+
+        const targetId = tab.dataset.tab;
+        const targetPanel = document.getElementById(targetId);
+
+        if (!targetPanel) return;
+
+        aboutTabs.forEach(item => {
+            item.classList.remove("active");
+            item.setAttribute("aria-selected", "false");
+        });
+
+        aboutPanels.forEach(panel => {
+            panel.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        targetPanel.classList.add("active");
+    }
+
+    aboutTabs.forEach(tab => {
+
+        tab.setAttribute("type", "button");
+        tab.setAttribute("role", "tab");
+        tab.setAttribute("aria-selected", tab.classList.contains("active") ? "true" : "false");
+
+        tab.addEventListener("click", () => {
+            activateAboutTab(tab);
         });
 
     });
 
 
-    // 7. HERO IMAGE PARALLAX - DESKTOP
+    /* 5. SCROLL REVEAL */
 
-    const hero = document.querySelector(".hero");
-    const heroProfile = document.querySelector(".hero-profile");
+    const revealElements = document.querySelectorAll(
+        ".section-heading, " +
+        ".about-content, " +
+        ".experience-chart-card, " +
+        ".experience-timeline, " +
+        ".achievement-stage, " +
+        ".achievement-footer, " +
+        ".contact-main"
+    );
 
-    if (
-        hero &&
-        heroProfile &&
-        window.matchMedia("(pointer: fine)").matches
-    ) {
+    revealElements.forEach(element => {
+        element.classList.add("reveal");
+    });
 
-        hero.addEventListener("mousemove", event => {
+    if ("IntersectionObserver" in window) {
 
-            const rect = hero.getBoundingClientRect();
+        const revealObserver = new IntersectionObserver((entries, observer) => {
 
-            const x = (event.clientX - rect.left) / rect.width - 0.5;
-            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            entries.forEach(entry => {
 
-            heroProfile.style.transform =
-                `translate(${x * 12}px, ${y * 12}px)`;
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
 
+            });
+
+        }, {
+            threshold: 0.12
         });
 
-        hero.addEventListener("mouseleave", () => {
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
 
-            heroProfile.style.transform = "translate(0, 0)";
+    } else {
 
+        revealElements.forEach(element => {
+            element.classList.add("active");
         });
 
     }
+
+
+    /* 6. SKILL BAR ANIMATION */
+
+    const skillBars = document.querySelectorAll(".chart-fill");
+
+    if ("IntersectionObserver" in window) {
+
+        const skillObserver = new IntersectionObserver((entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const bar = entry.target;
+                    const level = bar.style.getPropertyValue("--level");
+
+                    bar.style.width = level;
+
+                    observer.unobserve(bar);
+                }
+
+            });
+
+        }, {
+            threshold: 0.3
+        });
+
+        skillBars.forEach(bar => {
+            bar.style.width = "0%";
+            skillObserver.observe(bar);
+        });
+
+    } else {
+
+        skillBars.forEach(bar => {
+            bar.style.width = bar.style.getPropertyValue("--level");
+        });
+
+    }
+
+
+    /* 7. CURRENT YEAR */
+
+    const yearElement = document.getElementById("currentYear");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+
+    /* 8. IMAGE ERROR HANDLING */
+
+    document.querySelectorAll("img").forEach(img => {
+
+        img.addEventListener("error", function() {
+            console.warn("Image could not be loaded:", this.src);
+        });
+
+    });
+
+
+    /* 9. PAGE READY */
+
+    document.body.classList.add("page-ready");
+
+    console.log("BPL Portfolio Loaded Successfully.");
 
 });
