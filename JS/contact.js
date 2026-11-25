@@ -26,7 +26,7 @@
         const formNote = document.getElementById("formNote");
 
         // ကိုယ့် Email Address နဲ့ အစားထိုးပါ
-        const receiverEmail = "YOUR_EMAIL@gmail.com";
+        const receiverEmail = "kaewalin@gmail.com";
 
         if (contactForm) {
 
