@@ -872,3 +872,490 @@ button {
         scroll-behavior: auto !important;
     }
 }
+
+
+/* ==========================================
+   EXPERIENCE PAGE - PREMIUM UPGRADE
+========================================== */
+
+/* HERO UPGRADE */
+.experience-hero {
+    background:
+        radial-gradient(circle at 90% 15%, rgba(244, 119, 33, .10), transparent 30%),
+        linear-gradient(135deg, #fff1e5 0%, #fffaf5 100%);
+    position: relative;
+}
+
+.experience-hero-text {
+    max-width: 800px;
+}
+
+.experience-hero h1 {
+    font-size: clamp(75px, 10vw, 125px);
+    letter-spacing: -3px;
+    line-height: .92;
+}
+
+.experience-hero-text > p {
+    max-width: 520px;
+    font-size: 15px;
+}
+
+.hero-link {
+    transition: gap .3s ease, color .3s ease;
+}
+
+.hero-link:hover {
+    gap: 25px;
+    color: var(--exp-orange);
+}
+
+
+/* INTRO UPGRADE */
+.experience-intro-content {
+    padding: 38px;
+    background: linear-gradient(145deg, #ffffff, #fff6ee);
+    border: 1px solid var(--exp-border);
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(70, 40, 20, .035);
+}
+
+.experience-intro-content h2 {
+    font-size: clamp(40px, 5vw, 62px);
+    letter-spacing: -1px;
+}
+
+.experience-intro-content p {
+    max-width: 620px;
+}
+
+
+/* WORK SECTION */
+.section-heading h2 {
+    letter-spacing: -1px;
+}
+
+.experience-list {
+    gap: 30px;
+}
+
+
+/* EXPERIENCE CARD UPGRADE */
+.experience-card {
+    position: relative;
+    border: 1px solid #ead9ca;
+    border-radius: 20px;
+    padding: 42px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(60, 35, 15, .025);
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        var(--exp-orange),
+        rgba(244, 119, 33, .15)
+    );
+    opacity: .8;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(244, 119, 33, .35);
+    box-shadow: 0 25px 55px rgba(75, 45, 20, .09);
+}
+
+.experience-card-top {
+    gap: 30px;
+}
+
+.organization-logo {
+    border-radius: 16px;
+    background: linear-gradient(145deg, #fff1e5, #ffffff);
+    border-color: #f1d8c5;
+    transition: transform .3s ease;
+}
+
+.experience-card:hover .organization-logo {
+    transform: scale(1.04);
+}
+
+.experience-type {
+    padding: 7px 12px;
+    border-radius: 50px;
+    background: rgba(244, 119, 33, .09);
+    font-size: 9px;
+}
+
+.experience-main-info h3 {
+    font-size: 32px;
+    letter-spacing: -.5px;
+}
+
+.experience-main-info h4 {
+    font-size: 14px;
+}
+
+.experience-meta {
+    margin-top: 18px;
+    gap: 12px;
+}
+
+.experience-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #fffaf5;
+    border: 1px solid #f0e2d7;
+    border-radius: 8px;
+}
+
+.experience-number {
+    color: rgba(244, 119, 33, .18);
+    font-size: 48px;
+}
+
+.experience-divider {
+    margin: 35px 0;
+    background: linear-gradient(
+        to right,
+        var(--exp-orange),
+        var(--exp-border) 35%
+    );
+}
+
+.experience-details {
+    padding-left: 130px;
+}
+
+.detail-label {
+    font-size: 11px;
+}
+
+.experience-details p {
+    max-width: 800px;
+    font-size: 14px;
+}
+
+.experience-details ul {
+    gap: 13px;
+}
+
+.experience-details li {
+    font-size: 14px;
+}
+
+.experience-details li::marker {
+    color: var(--exp-orange);
+}
+
+.experience-tags span {
+    border: 1px solid #f0dfd0;
+    border-radius: 50px;
+    transition: background .3s ease, color .3s ease;
+}
+
+.experience-tags span:hover {
+    background: var(--exp-orange);
+    color: white;
+    border-color: var(--exp-orange);
+}
+
+
+/* LEARNING SECTION UPGRADE */
+.experience-learning-section {
+    background:
+        radial-gradient(circle at 0% 100%, rgba(244, 119, 33, .07), transparent 30%),
+        #fff1e5;
+}
+
+.learning-heading h2 {
+    letter-spacing: -1px;
+}
+
+.learning-grid {
+    gap: 20px;
+}
+
+.learning-card {
+    position: relative;
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 245px;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.learning-card::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -35px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(244, 119, 33, .12);
+    border-radius: 50%;
+    transition: transform .4s ease;
+}
+
+.learning-card:hover::after {
+    transform: scale(1.5);
+}
+
+.learning-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(70, 40, 20, .08);
+}
+
+.learning-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: var(--exp-cream);
+    border: 1px solid var(--exp-border);
+    font-size: 23px;
+}
+
+.learning-card h3 {
+    font-size: 21px;
+}
+
+.learning-card p {
+    font-size: 13px;
+}
+
+
+/* CTA UPGRADE */
+.experience-cta {
+    min-height: 480px;
+}
+
+.cta-content h2 {
+    letter-spacing: -1.5px;
+}
+
+.cta-button {
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(244, 119, 33, .15);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* FOOTER UPGRADE */
+.experience-footer {
+    background: #29221d;
+}
+
+.footer-inner {
+    min-height: 110px;
+}
+
+.footer-inner p {
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   MOBILE UPGRADE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .experience-hero {
+        padding: 85px 0;
+    }
+
+    .experience-hero h1 {
+        font-size: clamp(65px, 13vw, 95px);
+        letter-spacing: -2px;
+    }
+
+    .experience-intro-content {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .experience-intro-content h2 {
+        font-size: 42px;
+    }
+
+    .experience-card {
+        padding: 27px 22px;
+        border-radius: 17px;
+    }
+
+    .experience-card-top {
+        gap: 16px;
+    }
+
+    .experience-main-info h3 {
+        font-size: 24px;
+    }
+
+    .experience-main-info h4 {
+        line-height: 1.7;
+    }
+
+    .experience-details {
+        padding-left: 0;
+    }
+
+    .experience-details p,
+    .experience-details li {
+        font-size: 13px;
+    }
+
+    .experience-divider {
+        margin: 27px 0;
+    }
+
+    .learning-card {
+        min-height: 210px;
+        border-radius: 16px;
+    }
+
+    .experience-cta {
+        min-height: 400px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .experience-hero {
+        padding: 70px 0;
+    }
+
+    .experience-hero h1 {
+        font-size: 54px;
+        letter-spacing: -1.5px;
+    }
+
+    .experience-intro-content {
+        padding: 23px 18px;
+    }
+
+    .experience-intro-content h2,
+    .section-heading h2,
+    .learning-heading h2 {
+        font-size: 35px;
+    }
+
+    .experience-card {
+        padding: 22px 17px;
+    }
+
+    .experience-card-top {
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .organization-logo {
+        width: 58px;
+        height: 58px;
+        padding: 7px;
+        border-radius: 12px;
+    }
+
+    .experience-main-info h3 {
+        font-size: 20px;
+    }
+
+    .experience-meta span {
+        font-size: 10px;
+        padding: 7px 9px;
+    }
+
+    .experience-tags {
+        gap: 7px;
+    }
+
+    .experience-tags span {
+        font-size: 9px;
+        padding: 7px 11px;
+    }
+
+    .learning-card {
+        padding: 25px;
+    }
+
+    .cta-content h2 {
+        font-size: 39px;
+    }
+
+    .cta-decoration {
+        font-size: 115px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION FIX
+========================================== */
+
+@media (max-width: 768px) {
+
+    .header-container {
+        position: relative;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 2px;
+        background: var(--exp-text);
+        margin: 4px 0;
+        transition: .3s ease;
+    }
+
+    .page-nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: -20px;
+        right: -20px;
+        width: auto;
+        padding: 25px 25px;
+        background: var(--exp-background);
+        border-top: 1px solid var(--exp-border);
+        border-bottom: 1px solid var(--exp-border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        z-index: 100;
+    }
+
+    .page-nav.menu-open {
+        display: flex;
+    }
+
+    .page-nav a {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        padding: 5px 0;
+    }
+}
