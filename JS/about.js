@@ -6,6 +6,7 @@
 (() => {
     "use strict";
 
+
     /* ======================================
        1. MOBILE NAVIGATION
     ====================================== */
@@ -15,6 +16,7 @@
 
     if (menuButton && navigation) {
 
+        // Open / Close Menu
         menuButton.addEventListener("click", () => {
 
             const isOpen = navigation.classList.toggle("menu-open");
@@ -28,6 +30,7 @@
 
         });
 
+        // Close Menu When Clicking a Navigation Link
         navigation.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
@@ -35,9 +38,32 @@
                 navigation.classList.remove("menu-open");
                 menuButton.classList.remove("active");
 
-                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             });
+
+        });
+
+        // Close Menu When Clicking Outside
+        document.addEventListener("click", event => {
+
+            if (
+                !menuButton.contains(event.target) &&
+                !navigation.contains(event.target)
+            ) {
+
+                navigation.classList.remove("menu-open");
+                menuButton.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         });
 
@@ -64,12 +90,15 @@
     );
 
     revealElements.forEach(element => {
+
         element.classList.add("about-reveal");
+
     });
 
     if ("IntersectionObserver" in window) {
 
         const revealObserver = new IntersectionObserver(
+
             (entries, observer) => {
 
                 entries.forEach(entry => {
@@ -85,20 +114,26 @@
                 });
 
             },
+
             {
                 threshold: 0.12,
                 rootMargin: "0px 0px -40px 0px"
             }
+
         );
 
         revealElements.forEach(element => {
+
             revealObserver.observe(element);
+
         });
 
     } else {
 
         revealElements.forEach(element => {
+
             element.classList.add("about-visible");
+
         });
 
     }
@@ -130,11 +165,15 @@
     serviceItems.forEach(item => {
 
         item.addEventListener("mouseenter", () => {
+
             item.classList.add("service-active");
+
         });
 
         item.addEventListener("mouseleave", () => {
+
             item.classList.remove("service-active");
+
         });
 
     });
@@ -151,7 +190,9 @@
         const linkPage = link.getAttribute("href");
 
         if (linkPage && linkPage.endsWith("about.html")) {
+
             link.classList.add("active");
+
         }
 
     });
@@ -166,7 +207,9 @@
     );
 
     if (footerYear) {
+
         footerYear.textContent = new Date().getFullYear();
+
     }
 
 })();
