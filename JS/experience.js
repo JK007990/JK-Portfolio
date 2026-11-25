@@ -58,3 +58,25 @@
     });
 
 })();
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const pageNav = document.querySelector(".page-nav");
+
+if (mobileMenuBtn && pageNav) {
+
+    mobileMenuBtn.addEventListener("click", () => {
+        pageNav.classList.toggle("menu-open");
+    });
+
+    pageNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            pageNav.classList.remove("menu-open");
+        });
+    });
+
+}
